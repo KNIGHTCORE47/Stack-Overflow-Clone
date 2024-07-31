@@ -4,7 +4,7 @@ import { questionAttatchmentBucket } from '../name'
 import { storage } from './config'
 
 
-export default async function getOrCraeteStorage() {
+export default async function getOrCreateStorage() {
     try {
         await storage.getBucket(questionAttatchmentBucket);
         console.log("Storage connected");
