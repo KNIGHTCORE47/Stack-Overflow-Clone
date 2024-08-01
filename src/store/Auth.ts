@@ -21,7 +21,7 @@ interface IAuthStore {
     verifySession(): Promise<void>;
     login(
         email: string,
-        password: string,
+        password: string
     ): Promise<
         {
             success: boolean;
@@ -31,7 +31,7 @@ interface IAuthStore {
     createAccount(
         name: string,
         email: string,
-        password: string,
+        password: string
     ): Promise<
         {
             success: boolean;
@@ -77,8 +77,9 @@ export const useAuthStore = create<IAuthStore>()(
                     if (!user.prefs?.reputation) await account.updatePrefs<UserPrefs>({
                         reputation: 0
                     })
-
                     set({ session, user, jwt })
+                    return { success: true }
+
 
                 } catch (error) {
                     console.log(error);

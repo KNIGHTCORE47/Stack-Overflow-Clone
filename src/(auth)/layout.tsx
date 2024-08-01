@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useAuthStore } from "@/store/Auth";
 import { useRouter } from "next/router";
