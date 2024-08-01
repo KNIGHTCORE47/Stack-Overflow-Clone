@@ -27,7 +27,7 @@ interface IAuthStore {
             success: boolean;
             error?: AppwriteException | null
         }
-    >
+    >;
     createAccount(
         name: string,
         email: string,
@@ -37,8 +37,8 @@ interface IAuthStore {
             success: boolean;
             error?: AppwriteException | null
         }
-    >
-    logout(): Promise<void>
+    >;
+    logout(): Promise<void>;
 }
 
 
@@ -107,10 +107,11 @@ export const useAuthStore = create<IAuthStore>()(
                 try {
                     await account.deleteSessions()
                     set({ session: null, jwt: null, user: null })
+
                 } catch (error) {
                     console.log(error);
                 }
-            },
+            }
         })),
         {
             name: "auth",
