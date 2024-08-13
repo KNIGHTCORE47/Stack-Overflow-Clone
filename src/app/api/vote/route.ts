@@ -104,7 +104,7 @@ export async function POST(request: NextRequest) {
                 {
                     data: {
                         document: document,
-                        voteResult: upvotes.total = downvotes.total
+                        voteResult: upvotes.total - downvotes.total
                     },
                     message: response.documents[0] ? "Vote Status Updated" : "Voted"
                 },
@@ -143,7 +143,7 @@ export async function POST(request: NextRequest) {
             {
                 data: {
                     document: null,
-                    voteResult: upvotes.total = downvotes.total
+                    voteResult: upvotes.total - downvotes.total
                 },
                 message: "Vote Withdrawn"
             },
