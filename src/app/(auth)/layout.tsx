@@ -18,8 +18,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         return null;    //NOTE - Logic => Session is available so the value of the session go null.
     }
     return (    //NOTE - Logic => if there is no session we want to load childrens like login or register that will come up here
-        <div className="">
-            <div className="">{children}</div>
+        <div className="relative flex min-h-screen flex-col items-center justify-center py-12">
+            <div className="relative">{children}</div>
         </div>
     )
 }
